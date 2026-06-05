@@ -1,0 +1,41 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+/* ── SPINNER ──
+   Anel cinza claro como fundo (border completo),
+   com um arco azul como sobreposição (border parcial via border-top/right/bottom/left).
+   A animação gira o elemento infinitamente.
+*/
+
+.spinner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+
+  /* Anel de fundo cinza claro */
+  border: 10px solid #e0e0e0;
+
+  /* Arco azul: só a borda esquerda é colorida → cobre ~25% do círculo */
+  border-left-color:   #3b5bdb;
+  border-bottom-color: #3b5bdb;
+
+  /* Animação de rotação contínua */
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
